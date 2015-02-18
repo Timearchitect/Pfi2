@@ -1,13 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.Calendar;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
-
+import java.awt.Canvas;
 public class DigitalClockGUI extends JFrame {
 	/**
 	 * 
@@ -18,8 +18,9 @@ public class DigitalClockGUI extends JFrame {
 	private JTextField hoursText = new JTextField();
 	private JTextField minutesText = new JTextField();
 	private JTextField secondsText= new JTextField();
-	private JLabel timeLabel = new JLabel("currentTime");
-	private JLabel alarmLabel = new JLabel("Alarm");
+	public JLabel timeLabel = new JLabel("currentTime");
+	public JLabel alarmLabel = new JLabel("Alarm");
+	private Canvas canvas = new Canvas();
 	/**
 	 * Launch the application.
 	 */
@@ -28,9 +29,9 @@ public class DigitalClockGUI extends JFrame {
 			public void run() {
 				try {
 					DigitalClockGUI frame = new DigitalClockGUI();
-					//ClockThread thread= new ClockThread();
 					frame.setVisible(true);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					//frame.addDefaultCloseOperation(frame.clockLogic.thread.stop());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -59,7 +60,6 @@ public class DigitalClockGUI extends JFrame {
 		hoursText.setBounds(124, 188, 116, 22);
 		contentPane.add(hoursText);
 		hoursText.setColumns(10);
-		
 
 		minutesText.setText("minute");
 		minutesText.setBounds(291, 188, 116, 22);
@@ -70,6 +70,10 @@ public class DigitalClockGUI extends JFrame {
 		secondsText.setBounds(434, 188, 116, 22);
 		contentPane.add(secondsText);
 		secondsText.setColumns(10);
+		
+
+		canvas.setBounds(124, 10, 170, 170);
+		contentPane.add(canvas);
 		
 	}
 	
