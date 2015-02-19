@@ -25,8 +25,8 @@ public class ClockThread implements Runnable {
 		}
 	}
 	
-	public void stopRunning()
-	{
-	    run = false;
-	}
+//	public void stopRunning()
+//	{
+//	    run = false;
+//	}
 }

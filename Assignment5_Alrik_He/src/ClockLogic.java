@@ -34,6 +34,8 @@ public class ClockLogic implements ClockInterface {
 				+ String.format("%02d", _second);
 		System.out.println(s);
 		clockGUI.timeLabel.setText(s);
+		clockGUI.canvas.update(_hour, _minute, _second);;
+		clockGUI.canvas.repaint();
 
 	}
 	
