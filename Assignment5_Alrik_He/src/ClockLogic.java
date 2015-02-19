@@ -1,5 +1,7 @@
 import java.awt.Color;
+import java.io.IOException;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -63,17 +65,27 @@ public class ClockLogic implements ClockInterface {
 				+ String.format("%02d", _minute) + ":"
 				+ String.format("%02d", _second);
 		System.out.println(s);
-		clockGUI.timeLabel.setText(s);
-		clockGUI.canvas.update(_hour, _minute, _second);;
-		clockGUI.canvas.repaint();
+
 
 		if (alarmHour == _hour && alarmMinute == _minute && alarmSecond == _second) {
 			alarm = true;
 		}
 		if (alarm) {
-
 			clockGUI.contentPane.setBackground(Color.RED);
+
+			clockGUI.requestFocus();
+			//clockGUI.toFront();
+			clockGUI.setExtendedState(JFrame.ICONIFIED);
+			clockGUI.toFront();
+			
+//			clockGUI.setExtendedState(clockGUI.ICONIFIED);
+//			clockGUI.setExtendedState(clockGUI.NORMAL);
+//			clockGUI.setExtendedState(clockGUI.getExtendedState() | JFrame.ICONIFIED);
+//			clockGUI.setExtendedState(clockGUI.getExtendedState() & (~JFrame.ICONIFIED));
+
 		} 
+		clockGUI.timeLabel.setText(s);
+		clockGUI.canvas.update(_hour, _minute, _second);// include repaint
 
 	}
 	

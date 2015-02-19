@@ -29,7 +29,7 @@ public class DigitalClockGUI extends JFrame {
 	private JTextField secondsText= new JTextField();
 	public JLabel timeLabel = new JLabel("currentTime");
 	public JLabel alarmLabel = new JLabel("Alarm");
-	public Screen canvas = new Screen();
+	public Screen canvas = new Screen(this);
 	/**
 	 * Launch the application.
 	 */
@@ -40,7 +40,6 @@ public class DigitalClockGUI extends JFrame {
 					DigitalClockGUI frame = new DigitalClockGUI();
 					frame.setVisible(true);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					
 					//frame.addDefaultCloseOperation(frame.clockLogic.thread.stop());
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -120,6 +119,8 @@ public class DigitalClockGUI extends JFrame {
 		JButton Alarm = new JButton("set Alarm");
 		Alarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				clockLogic.closeAlarm();
+				canvas.update();
 				try{
 				clockLogic.setAlarmHour(Integer.parseInt(hoursText.getText()),Integer.parseInt(minutesText.getText()),Integer.parseInt(secondsText.getText()));
 				}catch(NumberFormatException e){
@@ -135,19 +136,17 @@ public class DigitalClockGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				clockLogic.clearAlarm();
 				clockLogic.closeAlarm();
+				canvas.update();
 			}
 		});
 		btnClear.setBounds(204, 155, 97, 25);
 		contentPane.add(btnClear);
-		
 	}
 	
 	public void setTimeOnLabel(String time){
 		timeLabel.setText("");
-		
 	}
 	public void alarm(boolean active){
 		alarmLabel.setText("");
-		
 	}
 }
