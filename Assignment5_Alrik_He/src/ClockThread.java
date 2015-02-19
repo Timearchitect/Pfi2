@@ -8,17 +8,19 @@ public class ClockThread implements Runnable {
 	public ClockThread(ClockInterface _ic){
 		this.clockInterface=_ic;
 		run = true;
+		
 	}
 	
 	public void run() {
 		System.out.println("running function!!");
 		
-		while(run){// loopar infinite
+		while(run == true){// loopar infinite
 			try{
 				cal=Calendar.getInstance();
 				System.out.println("run thread");
 				clockInterface.update(cal.get(cal.HOUR_OF_DAY), cal.get(cal.MINUTE), cal.get(cal.SECOND));
 				Thread.sleep(999);
+				
 			}catch(Exception e){
 				
 			}
