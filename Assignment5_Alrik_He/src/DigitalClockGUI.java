@@ -1,26 +1,32 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowStateListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 public class DigitalClockGUI extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	static String appdata = System.getenv("APPDATA");
+	static String iconPath = appdata + "\\graphics/clock.png";
+	
+	private static ImageIcon icon = new ImageIcon(iconPath);
 	public DigitalClockGUI frame;
 	private ClockLogic clockLogic= new ClockLogic(this);	
 	public JPanel contentPane=new JPanel();
@@ -29,7 +35,12 @@ public class DigitalClockGUI extends JFrame {
 	private JTextField secondsText= new JTextField();
 	public JLabel timeLabel = new JLabel("currentTime");
 	public JLabel alarmLabel = new JLabel("Alarm");
+	private JButton alarmBtn = new JButton("set Alarm");
+	private JButton clearBtn = new JButton("clear");
 	public Screen canvas = new Screen(this);
+	
+	private boolean alarming;
+	public static boolean minimized ,maximized;
 	/**
 	 * Launch the application.
 	 */
@@ -40,12 +51,14 @@ public class DigitalClockGUI extends JFrame {
 					DigitalClockGUI frame = new DigitalClockGUI();
 					frame.setVisible(true);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					//frame.addDefaultCloseOperation(frame.clockLogic.thread.stop());
+	//frame.addDefaultCloseOperation(frame.clockLogic.thread.stop());
 				} catch (Exception e) {
 					e.printStackTrace();
 					
 				}
 			}
+
+
 		});
 	}
 	/**
@@ -61,8 +74,25 @@ public class DigitalClockGUI extends JFrame {
 	             // frame.clockLogic.thread.destroy();
 			}
 		});
-		this.setTitle("Alarm clock!!!");
 		
+		this.addWindowStateListener(new WindowStateListener() {
+			   public void windowStateChanged(WindowEvent e) {
+				   if ((e.getNewState() & frame.ICONIFIED) == frame.ICONIFIED){
+					      System.out.println("minimized");
+					      minimized=true;
+					   }else{
+						   minimized=false;
+					   }
+					   // maximized
+					    if ((e.getNewState() & frame.MAXIMIZED_BOTH) == frame.MAXIMIZED_BOTH){
+					      System.out.println("maximized");
+					      maximized=true;
+					   }else{
+						   maximized=false;
+					   }
+			   }
+			});
+		this.changeIcon();
 		setBounds(100, 100, 383, 261);
 		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -116,8 +146,8 @@ public class DigitalClockGUI extends JFrame {
 		canvas.setBounds(10, 10, 170, 170);
 		contentPane.add(canvas);
 		
-		JButton Alarm = new JButton("set Alarm");
-		Alarm.addActionListener(new ActionListener() {
+		
+		alarmBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				clockLogic.closeAlarm();
 				canvas.update();
@@ -128,19 +158,18 @@ public class DigitalClockGUI extends JFrame {
 				}
 			}
 		});
-		Alarm.setBounds(204, 120, 97, 25);
-		contentPane.add(Alarm);
-		
-		JButton btnClear = new JButton("clear");
-		btnClear.addActionListener(new ActionListener() {
+		alarmBtn.setBounds(204, 120, 97, 25);
+		contentPane.add(alarmBtn);
+
+		clearBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				clockLogic.clearAlarm();
 				clockLogic.closeAlarm();
 				canvas.update();
 			}
 		});
-		btnClear.setBounds(204, 155, 97, 25);
-		contentPane.add(btnClear);
+		clearBtn.setBounds(204, 155, 97, 25);
+		contentPane.add(clearBtn);
 	}
 	
 	public void setTimeOnLabel(String time){
@@ -149,4 +178,25 @@ public class DigitalClockGUI extends JFrame {
 	public void alarm(boolean active){
 		alarmLabel.setText("");
 	}
+	public void setAlarmActive(boolean b) {
+		this.alarming=b;
+		
+	}
+	public boolean getAlarmActive() {
+		return this.alarming;
+		
+	}
+
+	public void changeIcon() {
+		if(!this.alarming){
+		this.setTitle("Clock");
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("clock.png")));
+		}else{
+		this.setTitle("Alarm Clock!!!");
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("clockAlarm.png")));
+		}
+		
+	}
+	
+
 }
