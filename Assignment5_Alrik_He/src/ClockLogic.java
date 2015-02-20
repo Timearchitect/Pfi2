@@ -1,4 +1,5 @@
 import java.awt.Color;
+import sun.audio.*;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -59,9 +60,9 @@ public class ClockLogic implements ClockInterface,Runnable {
 		clockGUI.alarmLabel.setText("");
 		clockGUI.setAlarmActive(false);
 		clockGUI.changeIcon();
-		this.alarmHour = 0;
-		this.alarmMinute = 0;
-		this.alarmSecond = 0;
+		this.alarmHour = -1;
+		this.alarmMinute = -1;
+		this.alarmSecond = -1;
 	}
 
 	@Override
@@ -81,8 +82,10 @@ public class ClockLogic implements ClockInterface,Runnable {
 			clockGUI.contentPane.setBackground(Color.RED);
 
 			if(clockGUI.minimized){
+				
 				if(	!clockGUI.isFocused())clockGUI.requestFocus();
 				clockGUI.toFront();
+				//clockGUI.toBack();
 				//clockGUI.setExtendedState(JFrame.ICONIFIED);
 				//clockGUI.toFront();
 			}
@@ -105,5 +108,13 @@ public class ClockLogic implements ClockInterface,Runnable {
 		
 		
 	}
+	
+//	public void sound (){
+//		AudioPlayer MGP = AudioPlayer.player;
+//		AudioStream ALERT;
+//		AudioData MD;
+//		Contiu
+//		
+//	}
 
 }
