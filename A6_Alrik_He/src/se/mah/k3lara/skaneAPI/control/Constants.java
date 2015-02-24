@@ -12,7 +12,7 @@ public class Constants {
 	public static final String lastPartURL = "0&LastStart=";
 	public static final String noOfResults = "&NoOf=";
 	public static int nbrResultsToGet = 25;
-
+	public static int test = 0;
 
 	/**
 	 * Build the Querystringz
