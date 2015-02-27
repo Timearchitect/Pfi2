@@ -61,7 +61,6 @@ public class Journey {
 	
 	public void setTravelTime(String travelMinutes) {
 		this.travelMinutes = travelMinutes;
-		
 	}
 	
 	public String getTravelMinutes(){

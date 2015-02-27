@@ -1,1 +1,45 @@
-Uml doc here!
+Question time!!!
+2)
+
+1. Mellan vilka stationer sker sökningen
+malmö C - Lund C
+
+2. Hur ser en QueryString ut om man bara vill ha 5 resultatet för sökningen (Titta i xsd filen för sök-ningen)?
+http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=%7C80000%7C0&selPointTo=%7C8000%7C0&NoOf=5
+
+
+3. Vilka delar av resan beskriver dessa taggar: <Journeys></Journeys>, <Journey></Jouney>,<Route-Links></RouteLinks>, >,<RouteLink></RouteLink>? Placera dem även korrekt hierarkiskt.
+
+<Js>
+	<J>
+	...
+	</J>
+</Js>
+
+4. Vilken XML-tagg innehåller antal byte för en resa och under vilken huvudtagg är den taggen place-rad?
+
+
+5. Ge exempel på en XML tagg som inte finns implementerad i det API du laddade ner.
+<flygplan></flygplan>
+
+3)
+String searchURL = Constants.getURL("81116","65008",20);
+
+I första parameter tar funktionen in startStationens id nummer i form av String.
+I andra parameter tar funktionen in slutStationens id nummer i form av String.
+I tredje parameter tar funktionen in antal res Resultat i form av int.
+
+Constants.getURL(par0,par1,par2)  bygger upp en String som sedan kommer att blir en Querystring
+I Constats finns det String delar på tokens/ repetetiva String element som sedan sätts i hop till 
+t.ex: "http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=%7C81116%7C0&selPointTo=%7C65008%7C0&LastStart=2012-10-14%2008:00"
+ Funktionen returnar Stringen och sparar i Stringvarabeln searchURL.
+
+
+
+
+
+ Journeys journeys = Parser.getJourneys(searchURL);
+ 
+ 
+  ArrayList<Station> searchStations = new ArrayList<Station>();
+ searchStations.addAll(Parser.getStationsFromURL("Malm"));

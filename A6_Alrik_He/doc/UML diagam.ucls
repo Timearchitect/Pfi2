@@ -1,34 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.8" icons="false" automaticImage="PNG" always-add-relationships="false" 
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="se.mah.k3lara.skaneAPI.control.Constants" project="A6_Alrik_He" 
-    file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/control/Constants.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="850" y="515"/>    
-    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="se.mah.k3lara.skaneAPI.control.Helpers" project="A6_Alrik_He" 
-    file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/control/Helpers.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="854" y="235"/>    
-    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="se.mah.k3lara.skaneAPI.model.Journey" project="A6_Alrik_He" 
+  <class id="1" language="java" name="se.mah.k3lara.skaneAPI.model.Journey" project="A6_Alrik_He" 
     file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/model/Journey.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="115" y="361"/>    
-    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="se.mah.k3lara.skaneAPI.model.Journeys" project="A6_Alrik_He" 
+  <class id="2" language="java" name="se.mah.k3lara.skaneAPI.model.Journeys" project="A6_Alrik_He" 
     file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/model/Journeys.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="557" y="435"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
@@ -37,72 +19,142 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="se.mah.k3lara.skaneAPI.model.Station" project="A6_Alrik_He" 
+  <class id="3" language="java" name="se.mah.k3lara.skaneAPI.model.Station" project="A6_Alrik_He" 
     file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/model/Station.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="556" y="182"/>    
-    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="se.mah.k3lara.skaneAPI.view.TestClass" project="A6_Alrik_He" 
-    file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/view/TestClass.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="924" y="715"/>    
-    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="se.mah.k3lara.skaneAPI.xmlparser.Parser" project="A6_Alrik_He" 
+  <class id="4" language="java" name="se.mah.k3lara.skaneAPI.xmlparser.Parser" project="A6_Alrik_He" 
     file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/xmlparser/Parser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="721" y="720"/>    
-    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+    <position height="-1" width="-1" x="812" y="68"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="se.mah.k3lara.skaneAPI.xmlparser.XMLParser" project="A6_Alrik_He" 
-    file="/A6_Alrik_He/src/se/mah/k3lara/skaneAPI/xmlparser/XMLParser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="469" y="734"/>    
-    <display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 
+  <class id="5" language="java" name="GUI" project="A6_Alrik_He" file="/A6_Alrik_He/src/GUI.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="976" y="530"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <class id="6" language="java" name="ParserThread" project="A6_Alrik_He" file="/A6_Alrik_He/src/ParserThread.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="802" y="237"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="AnimateThread" project="A6_Alrik_He" file="/A6_Alrik_He/src/AnimateThread.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1020" y="233"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="8">    
+    <bendpoint x="649" y="640"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
   <association id="9">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="10" name="journeys"/>      
-      <multiplicity id="11" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="10" name="gui">        
+        <position height="0" width="0" x="25" y="1"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="1">        
+        <position height="0" width="0" x="25" y="1"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="12">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="13" name="s">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="16">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="17" name="startStation">        
+        <position height="20" width="75" x="347" y="309"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
+        <position height="18" width="27" x="402" y="285"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="12">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="13" name="endStation">        
-        <position height="20" width="70" x="306" y="221"/>      
+  <association id="19">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="20" name="gui">        
+        <position height="0" width="0" x="25" y="1"/>      
       </attribute>      
-      <multiplicity id="14" minimum="0" maximum="1">        
-        <position height="18" width="27" x="378" y="202"/>      
+      <multiplicity id="21" minimum="0" maximum="1">        
+        <position height="0" width="0" x="25" y="1"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="15">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="16" name="startStation">        
-        <position height="20" width="75" x="347" y="309"/>      
+  <dependency id="22">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="23">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="24" name="endStation">        
+        <position height="20" width="70" x="306" y="221"/>      
       </attribute>      
-      <multiplicity id="17" minimum="0" maximum="1">        
-        <position height="18" width="27" x="402" y="285"/>      
+      <multiplicity id="25" minimum="0" maximum="1">        
+        <position height="18" width="27" x="378" y="202"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="27">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="28">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="29" name="journeys">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="false" initial-value="false" signature="true" 

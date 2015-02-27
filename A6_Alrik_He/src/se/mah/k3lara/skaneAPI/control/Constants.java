@@ -25,6 +25,7 @@ public class Constants {
 	public static String getURL(String startStationNumber, String endStationNumber  , String date, String time, int nbrResults){
 		String nbrRes = String.valueOf(nbrResults);
 		String url = baseURL + queryURL + pipe+startStationNumber + pipe + midPartURL +pipe + endStationNumber + pipe + lastPartURL + date + space + time+noOfResults+nbrRes;
+		System.out.println(url);
 		return url;
 	}
 	
