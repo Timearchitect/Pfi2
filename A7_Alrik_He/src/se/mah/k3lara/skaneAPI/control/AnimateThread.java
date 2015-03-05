@@ -1,3 +1,4 @@
+package se.mah.k3lara.skaneAPI.control;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -14,7 +15,7 @@ import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 public class AnimateThread extends Thread {
 
 	private GUI gui;
-	private volatile boolean running = true;
+	public volatile boolean running = true;
 	private int angle;
 	private BasicStroke stroke = new BasicStroke(10);
 	private Color purple = new Color(200, 20, 150);
@@ -22,7 +23,7 @@ public class AnimateThread extends Thread {
 	public AnimateThread(GUI gui) {
 		super();
 		this.gui = gui;
-		gui.searchBtn.setVisible(false);
+		 gui.btnTest.setVisible(false);
 	}
 
 	private void animateWait() {
@@ -35,7 +36,7 @@ public class AnimateThread extends Thread {
 			Graphics2D g2=	(Graphics2D) gui.canvas.getGraphics();
 						// g2.setBackground(Color.black);
 						//g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1-0.1f));
-						g2.setColor(purple);
+						g2.setColor(Color.orange);
 						g2.setStroke(stroke);
 						g2.drawArc((int) (0+stroke.getLineWidth()/2), (int) (0+stroke.getLineWidth()/2),(int) (gui.canvas.getWidth()-stroke.getLineWidth()), (int)(gui.canvas.getHeight()-stroke.getLineWidth()), -(angle*15), 50);
 						g2.setColor(Color.WHITE);
@@ -63,9 +64,9 @@ public class AnimateThread extends Thread {
 		
 		animateWait();
 		
-		if(dots.equals("......")){dots="";}
-		if(angle%20 ==5)dots+=".";
-		gui.textArea.setText("Searching"+dots);
+//		if(dots.equals("......")){dots="";}
+//		if(angle%20 ==5)dots+=".";
+//		gui.textArea.setText("Searching"+dots);
 			try {
 				Thread.sleep(15);
 			} catch (InterruptedException e) {
@@ -79,8 +80,9 @@ public class AnimateThread extends Thread {
 	
  public void kill(){
 	 this.running=false;
-	 gui.searchBtn.setVisible(true);
+	 gui.btnTest.setVisible(true);
  }
- 
 	
+ 
+ 
 }

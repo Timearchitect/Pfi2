@@ -63,7 +63,6 @@ public class GUI extends JFrame implements Runnable {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 501, 300);
-
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -72,7 +71,6 @@ public class GUI extends JFrame implements Runnable {
 			public void focusLost(FocusEvent arg0) {
 				if(!fromText.getText().equals("") && !toText.getText().equals("")){
 					searchBtn.setText("Sök resor");
-
 				}else if(!fromText.getText().equals("") || !toText.getText().equals("")){
 					searchBtn.setText("Sök station ");
 				}else{	

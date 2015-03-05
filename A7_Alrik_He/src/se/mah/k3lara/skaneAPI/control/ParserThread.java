@@ -1,3 +1,4 @@
+package se.mah.k3lara.skaneAPI.control;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -21,7 +22,7 @@ public class ParserThread extends Thread {
 		this.Animthread=gui.s;
 		this.searchURL =_searchURL;
 		this.running = true;
-		
+		System.out.println("hej");
 	}
 
 
@@ -33,12 +34,13 @@ public class ParserThread extends Thread {
 		gui.s.kill();
 		gui.s.interrupt();
 	//	gui.s.running=false;
-		gui.textArea.setText("");
+
+		gui.towardsTxtArea.setText("");
 		for (Journey journey : journeys.getJourneys()) {
-			gui.textArea.append(journey.getStartStation()+" - ");
-			gui.textArea.append(journey.getEndStation()+"");
+			gui.towardsTxtArea.append(journey.getStartStation()+" - ");
+			gui.towardsTxtArea.append(journey.getEndStation()+"");
 			String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY)+":"+journey.getDepDateTime().get(Calendar.MINUTE);
-			gui.textArea.append(" Avgår " + time +" om "+journey.getTimeToDeparture()+ " minuter. Försenad i "+((journey.getDepTimeDeviation()=="")?"0":journey.getDepTimeDeviation())+" minuter \n");
+			gui.towardsTxtArea.append(" Avgår " + time +" om "+journey.getTimeToDeparture()+ " minuter. Försenad i "+((journey.getDepTimeDeviation()=="")?"0":journey.getDepTimeDeviation())+" minuter \n");
 		} 
 		
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
