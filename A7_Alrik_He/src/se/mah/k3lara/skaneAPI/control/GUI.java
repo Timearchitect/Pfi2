@@ -229,7 +229,7 @@ public class GUI extends JFrame implements Runnable {
 				if((lineHour-cal.get(Calendar.MINUTE))<=0){
 					departTextArea.append("0 min\n");
 				}else{
-				departTextArea.append(( lineHour-cal.get(Calendar.MINUTE))+" min\n" );
+				departTextArea.append(( lineMinute-cal.get(Calendar.MINUTE))+" min\n" );
 				}
 				}else{
 				starsTextArea.append("\n");
