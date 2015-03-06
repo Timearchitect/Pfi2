@@ -216,12 +216,12 @@ public class GUI extends JFrame implements Runnable {
 			towardsTxtArea.setText("");
 			for (Line l : lines.getLines()) {
 				int lateTime=0;
-				if(l.getDepTimeDeviation()==null){
+				if(l.getDepTimeDeviation()!=""){
 				 lateTime= Integer.valueOf(l.getDepTimeDeviation());
 				}
 				System.out.println(lateTime);
-					int lineHour=l.getDepTime().get(Calendar.HOUR_OF_DAY);
-					int lineMinute=l.getDepTime().get(Calendar.MINUTE) + lateTime; // med förseningar
+				int lineHour=l.getDepTime().get(Calendar.HOUR_OF_DAY);
+				int lineMinute=l.getDepTime().get(Calendar.MINUTE) + lateTime; // med förseningar
 				System.out.println(cal.get(Calendar.MINUTE));
 				System.out.println(l.getDepTime().get(Calendar.MINUTE));
 				if(cal.get(Calendar.HOUR_OF_DAY)==lineHour && cal.get(Calendar.MINUTE)+noticeTime>=lineMinute){
