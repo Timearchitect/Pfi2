@@ -5,9 +5,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.util.Calendar;
 import java.util.List;
 
 import se.mah.k3lara.skaneAPI.model.Journeys;
+import se.mah.k3lara.skaneAPI.model.Line;
+import se.mah.k3lara.skaneAPI.model.Lines;
 import se.mah.k3lara.skaneAPI.model.Station;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
@@ -18,7 +21,6 @@ public class AnimateThread extends Thread {
 	public volatile boolean running = true;
 	private int angle;
 	private BasicStroke stroke = new BasicStroke(10);
-	private Color purple = new Color(200, 20, 150);
 
 	public AnimateThread(GUI gui) {
 		super();
@@ -40,7 +42,7 @@ public class AnimateThread extends Thread {
 						g2.setStroke(stroke);
 						g2.drawArc((int) (0+stroke.getLineWidth()/2), (int) (0+stroke.getLineWidth()/2),(int) (gui.canvas.getWidth()-stroke.getLineWidth()), (int)(gui.canvas.getHeight()-stroke.getLineWidth()), -(angle*15), 50);
 						g2.setColor(Color.WHITE);
-					g2.drawArc((int) (0+stroke.getLineWidth()/2), (int) (0+stroke.getLineWidth()/2),(int) (gui.canvas.getWidth()-stroke.getLineWidth()), (int)(gui.canvas.getHeight()-stroke.getLineWidth()), -(angle*15), 30);
+						g2.drawArc((int) (0+stroke.getLineWidth()/2), (int) (0+stroke.getLineWidth()/2),(int) (gui.canvas.getWidth()-stroke.getLineWidth()), (int)(gui.canvas.getHeight()-stroke.getLineWidth()), -(angle*15), 30);
 						//g2.fillOval(0, 0, 30, 30);
 						//g2.drawOval(0, 50, 30, 30);		
 						//g2.fillRect(50, 0, 30, 30);
@@ -82,7 +84,6 @@ public class AnimateThread extends Thread {
 	 this.running=false;
 	 gui.btnTest.setVisible(true);
  }
-	
- 
+
  
 }

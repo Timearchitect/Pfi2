@@ -150,6 +150,7 @@ public class Parser {
 		Calendar depTime;
 		String depTimeDeviation;
 		String towards;
+		//boolean timingPoint;
 		Lines lines = new Lines(station);
 		String xml = parser.getXmlFromUrl(searchURL); // getting XML
 		if (xml!=null){
@@ -168,6 +169,7 @@ public class Parser {
 				Element e = (Element) nl.item(i);  //Get the XML element Line;
 				//Get the value for that tag "No"
 				lineNo = parser.getValue(e, "No"); 
+				//timingPoint = parser.getValue(e, "IsTimingPoint");
 				if(debug){System.out.println("LineNo: "+ lineNo);} //For debugging.....
 				//Get the value for the tag "JourneyDateTime" //That is departuretime and date as String
 				String journeyDateTime = parser.getValue(e, "JourneyDateTime"); 

@@ -210,4 +210,9 @@ public class Helpers{
 		int day = depDate.get(Calendar.DAY_OF_MONTH);
 		return day+"/"+month;
 	}
+	
+	public static String to2Digits(int i) {	
+	
+		return String.format("%02d",i);
+	}
 }

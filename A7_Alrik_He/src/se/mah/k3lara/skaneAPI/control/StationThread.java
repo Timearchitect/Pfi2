@@ -19,7 +19,7 @@ public class StationThread extends Thread {
 	private Thread Animthread;
 	private Lines lines;
 	private Calendar cal;
-	private int noticeTime=10;
+	private int noticeTime=1;
 	
 	public StationThread(GUI gui) {
 		super();
@@ -34,6 +34,7 @@ public class StationThread extends Thread {
 
 
 	public void run(){
+		while(true){
 		cal=Calendar.getInstance();
 	//	Journeys journeys = Parser.getJourneys(searchURL);
 	/*	for (Journey journey : journeys.getJourneys()) {
@@ -60,7 +61,7 @@ public class StationThread extends Thread {
 //			gui.textArea.append(s.getStationName() +" number:" +s.getStationNbr()+"\n");
 //		}
 //		
-		lines = Parser.getStationResults(new Station("80000"));
+		lines = Parser.getStationResults(new Station("80046"));
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -78,10 +79,14 @@ public class StationThread extends Thread {
 			
 			if(cal.get(Calendar.HOUR_OF_DAY)==l.getDepTime().get(Calendar.HOUR_OF_DAY) && cal.get(Calendar.MINUTE)+noticeTime>=l.getDepTime().get(Calendar.MINUTE)){
 			gui.starsTextArea.append("*\n");
-			gui.departTextArea.append("om "+(l.getDepTime().get(Calendar.MINUTE)-cal.get(Calendar.MINUTE))+"\n" );
+			if((l.getDepTime().get(Calendar.MINUTE)-cal.get(Calendar.MINUTE))<=0){
+				gui.departTextArea.append("0 min\n");
+			}else{
+			gui.departTextArea.append(l.getDepTime().get(Calendar.MINUTE)-cal.get(Calendar.MINUTE)+" min\n" );
+			}
 			}else{
 			gui.starsTextArea.append("\n");
-			gui.departTextArea.append(l.getDepTime().get(Calendar.HOUR_OF_DAY) +":"+l.getDepTime().get(Calendar.MINUTE) +"\n" );
+			gui.departTextArea.append(String.format("%02d", l.getDepTime().get(Calendar.HOUR_OF_DAY)) +":"+String.format("%02d",l.getDepTime().get(Calendar.MINUTE)) +"\n" );
 			}
 			gui.stationTextArea.append(l.getLine()+"\n");
 			gui.towardsTxtArea.append(l.getDestination()+"\n");
@@ -95,6 +100,7 @@ public class StationThread extends Thread {
 			e.printStackTrace();
 		}
 		gui.s.running=true;
+		}
 	}
 	/*
 	public Journeys getJourneys(String searchURL){
